@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    function Organism(SingleCell, MultiCell){
+        this.SingleCell = SingleCell;
+        this.MultiCell = MultiCell;
+    }
+
+    Organism.prototype.displayDetails = function() {
+        console.log("Nje Qelizoret: " + this.SingleCell);
+        console.log("Shume Qelizoret: " + this.MultiCell);
+    }
+
+    function Life() {
+        this.organizmat = [];
+    }
+
+    Life.prototype.addOrganism = function (organism) {
+        this.organizmat.push(organism);
+    }
+
+    Life.prototype.displayOrganizmat = function (){
+            console.log(" Organizmat ne Boten e Gjalle ");
+            for(var i = 0; i < this.organizmat.length; i++){
+                // console.log("" + (i + 1) + ":");
+                this.organizmat[i].displayDetails();
+            }
+        }
+
+    var jeta = new Life();
+
+        var org1 = new Organism("Bacteria", "Fungi");
+        var org2 = new Organism("Ameba", "Plants");
+        var org3 = new Organism("Parameci", "Animals");
+
+        jeta.addOrganism(org1);
+        jeta.addOrganism(org2);
+        jeta.addOrganism(org3);
+
+        jeta.displayOrganizmat();
+
+
+</script>
+
+</body>
+</html>
